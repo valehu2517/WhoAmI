@@ -10,7 +10,7 @@
   background-size: cover;
   background-position: center;
   z-index: 0;
-  filter: blur(0.6px);
+  filter: blur(0.5px);
 }
     html, body {
     margin: 0;

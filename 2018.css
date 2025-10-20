@@ -8,7 +8,7 @@
   background-size: cover;
   background-position: center;
   z-index: 0;
-  filter: blur(1px);
+  filter: blur(0.6px);
 }
 
 /* The blur canvas covers everything */
