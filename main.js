@@ -2,8 +2,9 @@ const canvas = document.getElementById("blurCanvas");
 const ctx = canvas.getContext("2d");
 let isDrawing = false;
 const BRUSH = 40;
-const FADE_DELAY = 2000;
+const FADE_DELAY = 2700;
 const FADE_DURATION = 1000;
+
 
 function resize() {
   canvas.width = window.innerWidth;
@@ -14,8 +15,8 @@ window.addEventListener("resize", resize);
 resize();
 
 function drawBlurLayer() {
-  ctx.filter = "blur(10px)";
-  ctx.fillStyle = "rgba(255,255,255,0.9)";
+  ctx.filter = "blur(20px)";
+  ctx.fillStyle = "rgba(255, 255, 255, 0.86)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -43,9 +44,9 @@ function fadeBack(x, y) {
     ctx.save();
     ctx.globalAlpha = progress;
     ctx.globalCompositeOperation = "source-over";
-    ctx.filter = "blur(10px)";
+    
     const gradient = ctx.createRadialGradient(x, y, 0, x, y, BRUSH);
-    gradient.addColorStop(0, "rgba(255,255,255,0.9)");
+    gradient.addColorStop(0, "rgba(255, 255, 255, 0.05)");
     gradient.addColorStop(1, "rgba(255,255,255,0)");
     ctx.fillStyle = gradient;
     ctx.beginPath();
@@ -76,3 +77,4 @@ canvas.addEventListener("mouseleave", () => {
   isDrawing = false;
   canvas.style.cursor = "grab";
 });
+
